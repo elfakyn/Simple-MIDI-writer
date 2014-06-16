@@ -42,9 +42,9 @@ int M_Event::get_vlv_length()
 	unsigned long _data = data;
 	int length = 0;
 
-	while (data) {
+	while (_data) {
 		length++;
-		data = data >> 7;
+		_data = _data >> 7;
 	}
 
 	return length;
