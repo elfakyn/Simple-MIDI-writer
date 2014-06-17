@@ -49,3 +49,14 @@ int M_Event::get_vlv_length()
 	}
 	return length;
 }
+
+unsigned long eventArrayBytes(M_Event* events, int length)
+{
+	unsigned long track_length = 0;
+
+	for (int i = 0; i < length; i++) {
+		track_length += events[i].get_vlv_length() + 3;
+	}
+
+	return track_length;
+}

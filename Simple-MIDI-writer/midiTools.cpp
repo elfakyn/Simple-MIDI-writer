@@ -3,7 +3,7 @@
 void M_Stream::write_int(long value, int length)
 {
 	while (--length >= 0) {
-		dev_out.put(value >> 8 * length);
+		dev_out.put((char)(value >> 8 * length));
 	}
 }
 

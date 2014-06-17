@@ -25,4 +25,6 @@ public:
 	int get_vlv_length();
 };
 
+unsigned long eventArrayBytes(M_Event* events, int length);
+
 #endif

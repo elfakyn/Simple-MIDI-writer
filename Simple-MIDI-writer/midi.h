@@ -6,7 +6,7 @@
 using std::fstream;
 
 #define M_FORMAT_SINGLE_TRACK 0
-#define M_FORMAT_SYNCRHONOUS  1
+#define M_FORMAT_SYNCHRONOUS  1
 #define M_FORMAT_ASYNCHRONOUS 2
 
 class M_Stream {
