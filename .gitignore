@@ -11,6 +11,7 @@ $RECYCLE.BIN/
 # Visual Studio files
 *.sdf
 *.opensdf
+Debug/
 
 # Windows Installer files
 *.cab
