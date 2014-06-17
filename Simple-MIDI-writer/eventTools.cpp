@@ -1,5 +1,6 @@
 #include <array>
 #include "event.h"
+#include <iostream>
 
 M_Event::M_Event()
 {
@@ -29,22 +30,22 @@ void M_Event::get_data(char* _data)
 
 void M_Event::get_vlv(char* _vlv)
 {
-	int length = get_vlv_length();
+	int length = get_vlv_length() - 1;
 
-	while (--length) {
-		_vlv[length] = data >> 7 * length & 0x7F | 0x80; // Continuation bit is set
+	for (int i = length; i > 0; i--) {
+		_vlv[length - i] = delta_t >> 7 * i & 0x7F | 0x80; // Continuation bit is set
 	}
-	_vlv[0] = data & 0x7F;
+	_vlv[length] = delta_t & 0x7F;
 }
 
 int M_Event::get_vlv_length()
 {
-	unsigned long _data = data;
+	unsigned long _delta_t = delta_t;
 	int length = 0;
 
-	while (_data >> 7) {
+	while (_delta_t) {
 		length++;
+		_delta_t >>= 7;
 	}
-
 	return length;
 }

@@ -2,12 +2,12 @@
 
 void M_Stream::write_int(long value, int length)
 {
-	while (length-- >= 0) {
+	while (--length >= 0) {
 		dev_out.put(value >> 8 * length);
 	}
 }
 
-void M_Stream::write_header(int format, int tracks, int time_div)
+void M_Stream::write_header(int format, unsigned int tracks, unsigned int time_div)
 {
 	dev_out.write("MThd", 4);
 	write_int(6, 4); // Header chunk size is always 6 bytes
