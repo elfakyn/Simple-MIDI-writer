@@ -1,5 +1,3 @@
-// Hello world!
-
 #include <iostream>
 #include "midi.h"
 
