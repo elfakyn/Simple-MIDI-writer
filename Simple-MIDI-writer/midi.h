@@ -1,12 +1,28 @@
-#include <fstream>
-
 #ifndef MIDI_H
 #define MIDI_H
 
+#include <fstream>
+#include "event.h"
 using std::fstream;
 
-void midi_write_int(fstream &dev_out, int value, int length);
-void midi_write_header(fstream &dev_out, int format, int tracks, int time_div);
-void midi_write_track(fstream &dev_out, int chunk_size);
+class M_Stream {
+private:
+	fstream dev_out;
+public:
+	M_Stream(char &path)
+	{
+		dev_out.open(&path, fstream::binary | fstream::out);
+	}
+
+	~M_Stream()
+	{
+		dev_out.close();
+	}
+
+	void write_int(long value, int length);
+	void write_header(int format, int tracks, int time_div);
+	void write_track(long chunk_size);
+	void write_event(M_Event midi_event);
+};
 
 #endif
