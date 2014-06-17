@@ -31,7 +31,7 @@ void M_Event::get_vlv(char* _vlv)
 {
 	int length = get_vlv_length();
 
-	while (length--) {
+	while (--length) {
 		_vlv[length] = data >> 7 * length & 0x7F | 0x80; // Continuation bit is set
 	}
 	_vlv[0] = data & 0x7F;
@@ -42,9 +42,8 @@ int M_Event::get_vlv_length()
 	unsigned long _data = data;
 	int length = 0;
 
-	while (_data) {
+	while (_data >> 7) {
 		length++;
-		_data = _data >> 7;
 	}
 
 	return length;

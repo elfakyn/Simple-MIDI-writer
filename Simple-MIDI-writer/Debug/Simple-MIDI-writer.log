@@ -1,10 +1,11 @@
-﻿Build started 6/16/2014 15:47:26.
+﻿Build started 6/16/2014 21:11:36.
      1>Project "C:\Users\ee\Documents\GitHub\Simple-MIDI-writer\Simple-MIDI-writer\Simple-MIDI-writer.vcxproj" on node 2 (ClCompile target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt eventTools.cpp
-         eventTools.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Skipping... (no relevant changes detected)
+         Main.cpp
      1>Done Building Project "C:\Users\ee\Documents\GitHub\Simple-MIDI-writer\Simple-MIDI-writer\Simple-MIDI-writer.vcxproj" (ClCompile target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.48
+Time Elapsed 00:00:00.07
