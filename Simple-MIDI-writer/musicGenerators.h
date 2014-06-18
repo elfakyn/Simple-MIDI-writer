@@ -3,6 +3,6 @@
 
 #include "midi.h"
 
-int linearWalk(M_Event* events, int channel, int velocity, int startingNote, int interval, int notes, int noteLength, int pauseLength);
+int linearWalk(M_Event* events, char channel, int velocity, char startingNote, int interval, int notes, int noteLength, int pauseLength);
 
 #endif

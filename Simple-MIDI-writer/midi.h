@@ -9,7 +9,6 @@ using std::fstream;
 #define M_FORMAT_SYNCHRONOUS  1
 #define M_FORMAT_ASYNCHRONOUS 2
 
-
 #define M_META_SEQUENCE_NUMBER  0x00
 #define M_META_TEXT_EVENT		0x01
 #define M_META_COPYRIGHT_NOTICE	0x02
