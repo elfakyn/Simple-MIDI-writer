@@ -58,7 +58,7 @@ int chord(M_Event* events, char channel, int velocity, char baseNote, unsigned l
 	return count;
 }
 
-int scaleWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb)
+int scaleWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb, int stepSize)
 {
 	int direction = 1;
 	int numeral = baseNumeral;
@@ -73,10 +73,33 @@ int scaleWalk(M_Event* events, char channel, int velocity, char baseNote, unsign
 		if (rand() % 100 < switchProb) {
 			direction = -direction;
 		}
-		numeral = numeral + direction;
+		numeral = numeral + direction * ((rand() % stepSize) + 1);
 		if ((numeral < minNumeral || numeral > maxNumeral)) { // outside the scale
 			direction = -direction;
-			numeral = numeral + 2*direction;
+			numeral = numeral + 2 * direction;
+		}
+	}
+	return count;
+}
+
+int chordWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb, int stepSize)
+{
+	int direction = 1;
+	int numeral = baseNumeral;
+	int count = 0;
+	int note;
+	int chordType;
+	for (int i = 0; i < number; i++) {
+		note = scaleChordNote(numeral, scaleType, baseNote);
+		chordType = scaleChordType(numeral, scaleType);
+		count += chord(events + count, channel, velocity, note, noteLength, pauseLength, chordType);
+		if (rand() % 100 < switchProb) {
+			direction = -direction;
+		}
+		numeral = numeral + direction * ((rand() % stepSize) + 1);
+		if ((numeral < minNumeral || numeral > maxNumeral)) {
+			direction = -direction;
+			numeral = numeral + 2 * direction;
 		}
 	}
 	return count;

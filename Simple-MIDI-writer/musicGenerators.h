@@ -11,6 +11,6 @@
 
 int linearWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int interval, int number);
 int chord(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int type);
-int scaleWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb);
-
+int scaleWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb, int stepSize);
+int chordWalk(M_Event* events, char channel, int velocity, char baseNote, unsigned long noteLength, unsigned long pauseLength, int scaleType, int baseNumeral, int minNumeral, int maxNumeral, int number, int switchProb, int stepSize);
 #endif
