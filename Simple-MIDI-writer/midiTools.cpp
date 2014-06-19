@@ -24,8 +24,8 @@ void M_Stream::write_track(long chunk_size)
 
 void M_Stream::write_event(M_Event midi_event)
 {
-	char data[3];
-	char vlv[5];
+	char data[3] = { 0 };
+	char vlv[5] = { 0 };
 	int vlv_length;
 
 	midi_event.get_data(data);
