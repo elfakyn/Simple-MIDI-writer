@@ -27,6 +27,9 @@
     <ClCompile Include="musicGenerators.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="musicPrimitives.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="event.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="musicGenerators.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="musicPrimitives.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

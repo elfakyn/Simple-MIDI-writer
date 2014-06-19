@@ -1,6 +1,4 @@
-#include <array>
 #include "event.h"
-#include <iostream>
 
 M_Event::M_Event()
 {
